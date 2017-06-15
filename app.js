@@ -4,10 +4,10 @@ var daysInMonth = 30;
 var counter = 1;
 var htmlContent = '';
 var dateToday = new Date();
-var month = dateNow.getMonth();
-var day = dateNow.getDate();
-var year = dateNow.getFullYear();
-var headers = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+var month = dateToday.getMonth();
+var day = dateToday.getDate();
+var year = dateToday.getFullYear();
+var headers = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 //Table headers
 var renderTable = function() {
@@ -21,3 +21,5 @@ var renderTable = function() {
   headerRow.innerHTML = headersArray.join(''); //made the row's content be headersArray
   table.appendChild(headerRow); //appended headersRow
 };
+
+renderTable();
