@@ -50,7 +50,35 @@ var renderDays3 = function() {
   table.appendChild(getThirds);
 };
 
+var renderDays4 = function() {
+  var table = document.getElementById('table');
+  var getFourths = document.createElement('tr');
+  var fourthsArray = [];
+  for (var k = 0; k < fourthDates.length; k++) {
+    fourthsArray.push('<td>' + fourthDates[k] + '<td>');
+  }
+  getFourths.innerHTML = fourthsArray.join('');
+  table.appendChild(getFourths);
+};
+
 renderHeaders();
 renderDays();
 renderDays2();
 renderDays3();
+renderDays4();
+
+//Now for the adding of tasks//
+var toDos;
+var form = document.getElementById('toDos');
+
+function addTask(event) {
+  event.preventDefault();
+  var task = document.getElementById('text');
+  console.log('task = ' + task)
+  toDos = toDos.push('<td>' + task + '<td>');
+  var monthlyToDos = document.getElementById('monthToDos');
+  monthlyToDos.appendChild(task);
+  form.reset();
+}
+
+form.addEventListener('submit', addTask);

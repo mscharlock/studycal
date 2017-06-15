@@ -4,7 +4,15 @@
     <title>Michelle's Calendar</title>
     <link href="style.css" rel="stylesheet">
   </head>
+
   <body>
+    <form id="toDos">
+      <fieldset>
+        <label for="addATask">Task to Do</label>
+        <input type="text" name="task" placeholder="Enter a task to do here" required>
+      <button id="submitTask" type="submit">Add Task</button>
+    </form>
+
     <section class="calendar">
       <table id="table">
         <thead id="table_header">
@@ -15,9 +23,14 @@
         </tbody>
       </table>
     </section>
+
     <section class="monthToDos"></section>
+
   </body>
+
   <footer>
   </footer>
+
   <script src="app.js"></script>
+
 </html>
